@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="space-y-16">
         <div className="space-y-8 ">
           <GreyLogo className="h-full max-h-[40px] w-full max-w-[177px]" />
-          <p className="max-w-[304px] font-inter text-base text-custom-grey-lightest">
+          <p className="max-w-[304px] font-inter text-base text-custom-grey-lighter">
             Web3 Gaming Con is a conference related to video games in the web3
             industry, based in Paris.
           </p>

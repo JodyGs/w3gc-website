@@ -1,6 +1,7 @@
-import Head from "next/head";
 import { Meta } from "~/layout/Meta";
 import Mission from "~/sections/Mission/Mission";
+import Speakers from "~/sections/Speakers/Speakers";
+import Sponsors from "~/sections/Sponsors/Sponsors";
 
 export default function Home() {
   return (
@@ -13,6 +14,8 @@ export default function Home() {
         canonical={"https://w3gc.io/"}
       />
       <Mission />
+      <Speakers />
+      <Sponsors />
     </>
   );
 }

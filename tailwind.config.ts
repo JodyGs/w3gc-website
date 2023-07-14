@@ -26,8 +26,8 @@ export default {
           dark: "#660018",
         },
         "custom-grey": {
-          lightest: "#A6A7B2",
-          lighter: "#D4D6DC",
+          lightest: "#D4D6DC",
+          lighter: "#A6A7B2",
           light: "#494B5E",
           middle: "#1D1E26",
           dark: "#0F0F13",

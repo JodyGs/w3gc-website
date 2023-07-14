@@ -36,6 +36,8 @@ export default function HeroBanner() {
       <Geometric className="animationStrobe absolute left-0 top-0 -z-10" />
       <Image
         src={"/images/hero/person.webp"}
+        placeholder="blur"
+        blurDataURL={"/images/hero/person-placeholder.webp"}
         alt="Character"
         width={228.788}
         height={333.665}
