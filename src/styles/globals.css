@@ -1,3 +1,90 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply max-w-[100vw] overflow-x-hidden bg-custom-grey-middle font-aktiv text-white;
+  }
+
+  h1 {
+    @apply text-5xl font-extrabold uppercase leading-[48px] tracking-[2.4px];
+  }
+
+  h2 {
+    @apply text-xs font-extrabold uppercase leading-4;
+  }
+
+  /* h3 {
+    @apply text-[40px] font-extrabold uppercase leading-[48px] tracking-[-2px];
+  } */
+
+  .grid4 {
+    @apply grid grid-cols-4 gap-4;
+  }
+  .grid16 {
+    @apply grid grid-cols-4 gap-4 md:col-start-2 md:col-end-18 md:grid-cols-16;
+  }
+  .grid18 {
+    @apply grid grid-cols-4 gap-x-4 md:col-start-1 md:col-end-18 md:grid-cols-18;
+  }
+
+  .vertical-line {
+    @apply absolute left-1/2 top-0 h-[64px] w-[1px] -translate-x-1/2 -translate-y-1/2 bg-white md:h-[144px];
+  }
+
+  .main-container {
+    @apply min-h-[100vh];
+  }
+
+  .animationStrobe {
+    animation: strobe 0.6s ease-in-out;
+  }
+
+  .animationFromBottom {
+    animation: fromBottom 0.6s ease-in-out;
+  }
+
+  .fadeInAnimation {
+    animation: fadeIn 0.6s ease-in-out 0.7s backwards;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* keyframe strobe effect */
+  @keyframes strobe {
+    0% {
+      opacity: 0.2;
+    }
+    33% {
+      opacity: 1;
+    }
+    40% {
+      opacity: 0;
+    }
+    68% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.2;
+    }
+  }
+
+  @keyframes fromBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(10%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+}
