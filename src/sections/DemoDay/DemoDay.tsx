@@ -1,6 +1,8 @@
+import Image from "next/image";
 import React from "react";
 import Button from "~/components/Button";
 import SectionHeading from "~/components/headings/SectionHeading";
+import DemoDayBG from "./Rectangle113.png";
 
 const DATA_HASHTAGS = [
   {
@@ -65,7 +67,13 @@ function Hashtag() {
 
 export default function DemoDay() {
   return (
-    <section className="col-span-full py-20">
+    <section className="relative col-span-full py-20">
+      <Image
+        alt="background"
+        src={DemoDayBG}
+        fill
+        className="absolute inset-0 -z-[1]"
+      />
       <div className="px-2">
         <SectionHeading
           title="Demo Day"
@@ -76,12 +84,12 @@ export default function DemoDay() {
           {DATA_PICH_COMPETITION.map((pitch) => (
             <div
               key={pitch.name}
-              className="space-y-2 bg-custom-grey-middle px-6 py-4 text-xs leading-4"
+              className="group space-y-2 bg-custom-grey-middle px-6 py-4 text-xs leading-4 transition-all duration-300 ease-in-out hover:bg-white hover:py-6"
             >
-              <h4 className="font-extrabold uppercase text-[#c5c6ce]">
+              <h4 className="font-extrabold uppercase text-[#c5c6ce] transition-colors duration-300 ease-in-out group-hover:text-black">
                 {pitch.name}
               </h4>
-              <p className="font-inter text-custom-grey-lighter">
+              <p className="font-inter text-custom-grey-lighter transition-colors duration-300 ease-in-out group-hover:text-black">
                 {pitch.description}
               </p>
             </div>

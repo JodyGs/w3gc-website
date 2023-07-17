@@ -24,26 +24,27 @@ const DATA_ANNOUNCEMENTS = [
 export default function HeroBanner() {
   return (
     <>
-      <Navigation />
-      {/* <div className="relative">
+      <div className="relative h-[216px] w-full">
+        <Navigation />
         <Image
           src="/images/hero/w3gc-hero-bg.webp"
           alt="hero banner"
           fill
-          className=""
+          className="absolute inset-0 -z-20"
         />
-      </div> */}
-      <Geometric className="animationStrobe absolute left-0 top-0 -z-10" />
-      <Image
-        src={"/images/hero/person.webp"}
-        placeholder="blur"
-        blurDataURL={"/images/hero/person-placeholder.webp"}
-        alt="Character"
-        width={228.788}
-        height={333.665}
-        className="animationFromBottom absolute right-0 top-0 -z-10"
-      />
-      <div className="mx-2 mt-[70px] space-y-8">
+        <Geometric className="animationStrobe absolute left-0 top-0 -z-10" />
+        <div className="absolute right-0 top-0 -z-10 h-[333px] w-[228px]">
+          <Image
+            src={"/images/hero/person.webp"}
+            placeholder="blur"
+            blurDataURL={"/images/hero/person-placeholder.webp"}
+            alt="Character"
+            fill
+            className="animationFromBottom "
+          />
+        </div>
+      </div>
+      <div className="mx-2 -mt-[90px] space-y-8">
         <h1>Web3 Gaming Con</h1>
         <h2>
           The first worldwide Web3 gaming conference at the heart of Paris

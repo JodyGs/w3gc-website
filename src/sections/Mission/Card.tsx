@@ -19,8 +19,8 @@ export default function Card({
   number: Number,
 }: Props) {
   return (
-    <div className="bg-custom-grey-dark">
-      <div className="relative h-[200px] w-[304px]">
+    <div className="max-h-[408px] max-w-[336px] bg-custom-grey-dark">
+      <div className="relative min-h-[200px] min-w-[304px]">
         <Image
           src={img}
           placeholder="blur"
