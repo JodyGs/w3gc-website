@@ -1,4 +1,5 @@
 import { Meta } from "~/layout/Meta";
+import DemoDay from "~/sections/DemoDay/DemoDay";
 import Mission from "~/sections/Mission/Mission";
 import Speakers from "~/sections/Speakers/Speakers";
 import Sponsors from "~/sections/Sponsors/Sponsors";
@@ -16,6 +17,7 @@ export default function Home() {
       <Mission />
       <Speakers />
       <Sponsors />
+      <DemoDay />
     </>
   );
 }

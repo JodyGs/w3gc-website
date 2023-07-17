@@ -202,7 +202,7 @@ export function NumberThree(props: React.ComponentProps<"svg">) {
     </svg>
   );
 }
-export function Arrow(props: React.ComponentProps<"svg">) {
+export function LeftArrow(props: React.ComponentProps<"svg">) {
   return (
     <svg
       {...props}
@@ -210,10 +210,19 @@ export function Arrow(props: React.ComponentProps<"svg">) {
       fill="none"
       viewBox="0 0 24 24"
     >
-      <path
-        fill="#fff"
-        d="M3.146 12.646h17.708v-1H5.56l3.5-3.5H7.646l-4.5 4.5zm5.622 3.5l-2-2H5.354l2 2h1.414z"
-      ></path>
+      <path d="M3.146 12.646h17.708v-1H5.56l3.5-3.5H7.646l-4.5 4.5zm5.622 3.5l-2-2H5.354l2 2h1.414z"></path>
+    </svg>
+  );
+}
+export function RightArrow(props: React.ComponentProps<"svg">) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path d="M20.854 12.646H3.146v-1H18.44l-3.5-3.5h1.415l4.5 4.5zm-5.622 3.5l2-2h1.414l-2 2h-1.414z"></path>
     </svg>
   );
 }
