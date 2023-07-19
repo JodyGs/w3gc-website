@@ -18,11 +18,11 @@ export default function Button({
     <button
       className={clsx(
         className,
-        "duration-600 rounded-sm font-aktiv font-bold transition-all focus:outline-none ",
+        "duration-600 max-w-full rounded-sm font-aktiv font-bold transition-all focus:outline-none md:text-xl",
         {
-          "bg-custom-red-middle ring-[5px] ring-custom-red-middle/20 hover:border-transparent hover:bg-white hover:text-custom-red-middle hover:ring-transparent":
+          "bg-custom-red-middle ring-[5px] ring-custom-red-middle/20 hover:border-transparent hover:bg-white hover:text-custom-red-middle hover:ring-transparent active:bg-custom-pink-light active:text-custom-red-darktext":
             variant === "primary",
-          "border-[1px] border-white/50 hover:border-transparent hover:bg-white hover:text-custom-grey-dark":
+          "active:text-[#3a3c4b]] border-[1px] border-white/50 hover:border-transparent hover:bg-white hover:text-custom-grey-dark active:bg-[#C5C6CE]":
             variant === "secondary",
         },
         {

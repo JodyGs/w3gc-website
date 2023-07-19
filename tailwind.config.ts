@@ -23,6 +23,7 @@ export default {
       colors: {
         "custom-red": {
           middle: "#FF003D",
+          darktext: "#990025",
           dark: "#660018",
         },
         "custom-grey": {
@@ -31,6 +32,11 @@ export default {
           light: "#494B5E",
           middle: "#1D1E26",
           dark: "#0F0F13",
+        },
+        "custom-pink": {
+          light: "#FFCCD8",
+          middle: "#FF003D",
+          dark: "#ff668b",
         },
       },
       maxWidth: {
@@ -60,6 +66,7 @@ export default {
         16: "16",
         17: "17",
         18: "18",
+        19: "19",
       },
       boxShadow: {
         custom: "0px 16px 40px rgba(68, 238, 212, 0.3)",

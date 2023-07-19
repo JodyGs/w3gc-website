@@ -1,5 +1,6 @@
 import React, { JSXElementConstructor } from "react";
 import Image from "next/image";
+import clsx from "clsx";
 
 type Props = {
   title: string;
@@ -8,6 +9,7 @@ type Props = {
   placeholder: string;
   alt: string;
   number: JSXElementConstructor<React.SVGProps<SVGSVGElement>>;
+  className?: string;
 };
 
 export default function Card({
@@ -17,9 +19,15 @@ export default function Card({
   placeholder,
   alt,
   number: Number,
+  className,
 }: Props) {
   return (
-    <div className="max-h-[408px] max-w-[336px] bg-custom-grey-dark">
+    <div
+      className={clsx(
+        className,
+        "mx-auto max-h-[408px] max-w-[336px] bg-custom-grey-dark xl:h-[68%] xl:w-[26.9%]"
+      )}
+    >
       <div className="relative min-h-[200px] min-w-[304px]">
         <Image
           src={img}

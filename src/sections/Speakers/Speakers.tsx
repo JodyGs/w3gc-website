@@ -27,12 +27,13 @@ const DATA_SPEAKERS = [
 
 export default function Speakers() {
   return (
-    <section className="col-span-full px-2 pb-20">
+    <section className="md:col-span-16 grid16 col-span-full px-2 pb-20">
       <SectionHeading
+        className="col-span-full"
         title="Speakers"
         description="Lorem ipsum dolor sit amet consectetur. Interdum nunc sem facilisis egestas mauris. Et amet vehicula nulla ullamcorper venenatis dictum velit. Sit adipiscing aliquam lectus volutpat suspendisse. Sit lacus diam egestas ut."
       />
-      <div className="space-y-8 pt-8">
+      <div className="col-span-full space-y-8 pt-8">
         <Carousel slides={DATA_SPEAKERS} />
         <Button variant="secondary" className="w-full">
           Become a speaker

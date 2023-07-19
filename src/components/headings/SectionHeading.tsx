@@ -12,12 +12,13 @@ export default function SectionHeading({
   title,
   subtitle,
   description,
+  className,
 }: Props) {
   return (
-    <>
+    <div className={className}>
       <motion.h3
         variants={ITEM_VARIANTS}
-        className="mb-8 text-[40px] font-extrabold uppercase leading-[48px] tracking-[-2px]"
+        className="col-span-full mb-8 text-[40px] font-extrabold uppercase leading-[48px] tracking-[-2px] xl:text-6xl xl:leading-[64px] xl:tracking-[-3.2px]"
       >
         {title}
       </motion.h3>
@@ -37,6 +38,6 @@ export default function SectionHeading({
           {description}
         </motion.p>
       )}
-    </>
+    </div>
   );
 }

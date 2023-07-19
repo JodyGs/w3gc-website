@@ -55,12 +55,3 @@ export default function Carousel(props: CarouselProps) {
     </>
   );
 }
-
-{
-  /* {props.slides.map(({ name, title, img, placeholder }) => (
-  <div
-    className="min-h-[280px] min-w-[144px] bg-custom-red-dark"
-    key={name}
-  ></div>
-))} */
-}

@@ -20,13 +20,13 @@
   } */
 
   .grid4 {
-    @apply grid grid-cols-4 gap-4;
+    @apply grid grid-cols-4 gap-x-4;
   }
   .grid16 {
-    @apply grid grid-cols-4 gap-4 md:col-start-2 md:col-end-18 md:grid-cols-16;
+    @apply grid grid-cols-4 gap-x-4 md:col-start-2 md:col-end-18 md:grid-cols-16;
   }
   .grid18 {
-    @apply grid grid-cols-4 gap-x-4 md:col-start-1 md:col-end-18 md:grid-cols-18;
+    @apply grid grid-cols-4 gap-x-4 md:col-start-1 md:col-end-19 md:grid-cols-18;
   }
 
   .vertical-line {

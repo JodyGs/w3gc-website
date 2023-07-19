@@ -1,6 +1,9 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Image from "next/image";
+import Button from "../Button";
+import { Logo } from "../svg/svg";
+import Link from "next/link";
 
 export default function Navigation() {
   const logoRef = React.useRef<HTMLImageElement>(null);
@@ -10,15 +13,11 @@ export default function Navigation() {
   }, []);
 
   return (
-    <nav className="px-2 pt-6">
-      <Image
-        ref={logoRef}
-        src="/w3gc-logo.webp"
-        alt="W3GC Logo"
-        width={104}
-        height={24}
-        className="appearingAnimation"
-      />
+    <nav className="justify-between px-2 pt-6 md:flex">
+      <Link href={"#"}>
+        <Logo className="h-[24] w-[104px] md:h-12 md:w-[212px]" />
+      </Link>
+      <Button className="hidden md:block">Pre-register</Button>
       {/* <Navbar /> */}
     </nav>
   );

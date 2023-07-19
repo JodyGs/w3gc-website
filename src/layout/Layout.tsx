@@ -25,11 +25,11 @@ const Layout = ({ children }: Props) => (
       )}
     >
       <div className="main-container m-auto max-w-8xl">
-        <header className="col-span-full mb-20 md:col-start-2 md:col-end-18">
+        <header className="col-span-full mx-auto mb-20 md:col-start-2 md:col-end-18">
           <HeroBanner />
         </header>
         <main className="grid4 md:grid18 col-span-full">{children}</main>
-        <footer className="md:col-end-19 col-span-full md:col-start-1 lg:col-start-2 lg:col-end-18">
+        <footer className="md:grid18 col-span-full md:col-start-1 md:col-end-19 lg:col-start-2 lg:col-end-18">
           <Footer />
         </footer>
       </div>

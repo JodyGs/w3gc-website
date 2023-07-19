@@ -1,31 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import Button from "~/components/Button";
+import Hashtag from "~/components/DemoDay/Hashtags";
 import SectionHeading from "~/components/headings/SectionHeading";
-import DemoDayBG from "./Rectangle113.png";
-
-const DATA_HASHTAGS = [
-  {
-    name: "#Games",
-    url: "https://twitter.com/hashtag/Games",
-  },
-  {
-    name: "#Gamingtools",
-    url: "https://twitter.com/hashtag/Gamingtools",
-  },
-  {
-    name: "#DAO",
-    url: "https://twitter.com/hashtag/DAO",
-  },
-  {
-    name: "#NFT",
-    url: "https://twitter.com/hashtag/NFT",
-  },
-  {
-    name: "#Esporttools",
-    url: "https://twitter.com/hashtag/Esporttools",
-  },
-];
+import { Spitch } from "~/components/svg/svg";
 
 const DATA_PICH_COMPETITION = [
   {
@@ -47,62 +25,66 @@ const DATA_PICH_COMPETITION = [
   },
 ];
 
-function Hashtag() {
-  return (
-    <div className="flex flex-wrap items-center">
-      {DATA_HASHTAGS.map((hashtag, index) => (
-        <a
-          key={index}
-          href={hashtag.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mb-2 mr-2 rounded-sm bg-custom-red-middle/20 px-2 py-1 font-inter leading-6 text-custom-red-middle"
-        >
-          {hashtag.name}
-        </a>
-      ))}
-    </div>
-  );
-}
-
 export default function DemoDay() {
   return (
-    <section className="relative col-span-full py-20">
+    <section className="md:grid18 relative col-span-full py-20 lg:pb-[200px] lg:pt-60">
       <Image
         alt="background"
-        src={DemoDayBG}
+        src="/images/DemoDay/bg-DemoDay.webp"
         fill
-        className="absolute inset-0 -z-[1]"
+        className="absolute inset-0 -z-[1] hidden object-cover sm:block"
       />
-      <div className="px-2">
-        <SectionHeading
-          title="Demo Day"
-          subtitle="Participate in a Startup Pitch Competition"
-        />
-        <Hashtag />
-        <div className="space-y-2 pt-8">
-          {DATA_PICH_COMPETITION.map((pitch) => (
-            <div
-              key={pitch.name}
-              className="group space-y-2 bg-custom-grey-middle px-6 py-4 text-xs leading-4 transition-all duration-300 ease-in-out hover:bg-white hover:py-6"
-            >
-              <h4 className="font-extrabold uppercase text-[#c5c6ce] transition-colors duration-300 ease-in-out group-hover:text-black">
-                {pitch.name}
-              </h4>
-              <p className="font-inter text-custom-grey-lighter transition-colors duration-300 ease-in-out group-hover:text-black">
-                {pitch.description}
-              </p>
+      <Image
+        alt="background"
+        src="/images/DemoDay/bg-mobile-DemoDay.webp"
+        fill
+        className="absolute inset-0 -z-[1] object-cover sm:hidden"
+      />
+      <div className="md:grid18 px-2 md:col-span-full md:px-0">
+        <SectionHeading className="grid16 col-span-16" title="Demo Day" />
+        <div className="cols-pan-full grid18 space-y-8 pt-8 md:space-y-0 lg:pt-20">
+          <div className="col-span-full md:col-span-6 md:col-start-2 md:col-end-9 md:block">
+            <h4 className="mb-4 font-inter text-2xl font-extrabold leading-8 lg:text-[40px] lg:leading-[48px]">
+              Participate in a Startup Pitch Competition
+            </h4>
+            <Hashtag />
+            <div className="hidden xl:inline-block xl:pt-11">
+              <Spitch className="h-32 w-32" />
             </div>
-          ))}
+            <div className="lg:pt-26 hidden space-y-4 pt-8 md:block xl:flex xl:space-x-2 xl:space-y-0 xl:pt-28">
+              <Button variant="primary" className="w-full xl:w-fit">
+                Apply to pitch
+              </Button>
+              <Button variant="secondary" className="w-full xl:w-fit">
+                Attend as a VC
+              </Button>
+            </div>
+          </div>
+          <div className="relative col-span-full space-y-2 md:col-span-8 md:col-start-10">
+            {DATA_PICH_COMPETITION.map((pitch) => (
+              <div
+                key={pitch.name}
+                className="group space-y-2 bg-custom-grey-middle px-6 py-4 text-xs leading-4 transition-all duration-300 ease-in-out hover:bg-white hover:py-8 md:space-y-4 lg:px-10 lg:py-6"
+              >
+                <h4 className="font-extrabold uppercase text-[#c5c6ce] transition-colors duration-300 ease-in-out group-hover:text-black xl:text-base xl:leading-6">
+                  {pitch.name}
+                </h4>
+                <p className="font-inter text-custom-grey-lighter transition-colors duration-300 ease-in-out group-hover:text-black xl:text-base xl:leading-6">
+                  {pitch.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="space-y-4 pt-8">
-          <Button variant="primary" className="w-full">
-            Apply to pitch
-          </Button>
-          <Button variant="secondary" className="w-full">
-            Attend as a VC
-          </Button>
-        </div>
+      </div>
+
+      <div className="space-y-4 px-2 pt-8 sm:flex sm:items-center sm:justify-center sm:space-x-2 sm:space-y-0 md:hidden">
+        <Button variant="primary" className="w-full">
+          Apply to pitch
+        </Button>
+        <Button variant="secondary" className="w-full">
+          Attend as a VC
+        </Button>
       </div>
     </section>
   );

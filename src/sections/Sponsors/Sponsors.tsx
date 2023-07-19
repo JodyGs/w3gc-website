@@ -67,53 +67,55 @@ const DATA_SPONSORS_2ND = [
 
 export default function Sponsors() {
   return (
-    <section className="col-span-full space-y-10">
-      <div className="relative h-full w-full">
-        <div className="px-2 pb-10 pt-20">
-          <SectionHeading title="Sponsors" />
-          <Button variant="secondary" className="w-full">
+    <section className="grid18 relative col-span-full space-y-10">
+      <div className="md:col-span-16 md:grid16 relative col-span-full h-full w-full">
+        <div className="grid16 col-span-full px-2 pb-10 pt-20 md:flex md:justify-between">
+          <SectionHeading title="Sponsors" className="col-span-full -mb-2" />
+          <Button variant="secondary" className="col-span-full w-full md:w-fit">
             Become a sponsor
           </Button>
         </div>
-        <Marquee>
-          {DATA_SPONSORS_1ST.map((sponsor, index) => (
-            <div
-              key={sponsor.name}
-              className="h-[128px] w-[128px] border-x-[1px] border-custom-grey-middle bg-black p-4"
-            >
-              <div className="relative h-full w-full">
-                <Image
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  layout="fill"
-                  objectFit="cover"
-                />
+        <div className="grid16 col-span-full lg:translate-y-16">
+          <Marquee className="col-span-full">
+            {DATA_SPONSORS_1ST.map((sponsor, index) => (
+              <div
+                key={sponsor.name}
+                className="h-[128px] w-[128px] border-x-[1px] border-custom-grey-middle bg-black p-4 lg:h-[224px] lg:w-[224px]"
+              >
+                <div className="relative h-full w-full">
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
               </div>
-            </div>
-          ))}
-        </Marquee>
-        <Marquee
-          direction="right"
-          className="border-t-[1px] border-custom-grey-middle"
-        >
-          {DATA_SPONSORS_2ND.map((sponsor, index) => (
-            <div
-              key={sponsor.name}
-              className="h-[128px] w-[128px] border-x-[1px] border-custom-grey-middle bg-black p-4"
-            >
-              <div className="relative h-full w-full">
-                <Image
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  layout="fill"
-                  objectFit="contain"
-                  placeholder="blur"
-                  blurDataURL={sponsor.placeholder}
-                />
+            ))}
+          </Marquee>
+          <Marquee
+            direction="right"
+            className="col-span-full border-t-[1px] border-custom-grey-middle"
+          >
+            {DATA_SPONSORS_2ND.map((sponsor, index) => (
+              <div
+                key={sponsor.name}
+                className="h-[128px] w-[128px] border-x-[1px] border-custom-grey-middle bg-black p-4 lg:h-[224px] lg:w-[224px]"
+              >
+                <div className="relative h-full w-full">
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    layout="fill"
+                    objectFit="contain"
+                    placeholder="blur"
+                    blurDataURL={sponsor.placeholder}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
-        </Marquee>
+            ))}
+          </Marquee>
+        </div>
       </div>
     </section>
   );
