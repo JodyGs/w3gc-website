@@ -38,13 +38,13 @@ export default function Card({
           className="z-10 object-cover"
         />
       </div>
-      <div className="relative space-y-6 p-8 pr-14">
-        <h4 className="z-10 font-extrabold uppercase leading-6">{title}</h4>
-        <p className="z-10 font-inter leading-6 text-custom-grey-lighter">
+      <div className="relative space-y-6 overflow-hidden p-8 pr-14 ">
+        <h4 className="font-extrabold uppercase leading-6">{title}</h4>
+        <p className="font-inter leading-6 text-custom-grey-lighter">
           {description}
         </p>
-        {/* FIXME: Number next/image */}
-        <Number className="absolute -top-7 right-0 max-h-[111px]" />
+
+        <Number className={"absolute -right-5 -top-8 h-[49%] w-[37.1%]"} />
       </div>
     </div>
   );

@@ -20,6 +20,9 @@ export default {
       "6xl": "4rem",
     },
     extend: {
+      screens: {
+        xs: "475px",
+      },
       colors: {
         "custom-red": {
           middle: "#FF003D",

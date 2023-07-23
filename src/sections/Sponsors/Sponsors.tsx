@@ -68,6 +68,14 @@ const DATA_SPONSORS_2ND = [
 export default function Sponsors() {
   return (
     <section className="grid18 relative col-span-full space-y-10">
+      <div className="absolute h-full w-full">
+        <Image
+          src="/images/sponsors/bg-sponsors.webp"
+          alt="Sponsors"
+          fill
+          className="absolute inset-0 -z-20 object-cover object-center opacity-60"
+        />
+      </div>
       <div className="md:col-span-16 md:grid16 relative col-span-full h-full w-full">
         <div className="grid16 col-span-full px-2 pb-10 pt-20 md:flex md:justify-between">
           <SectionHeading title="Sponsors" className="col-span-full -mb-2" />
@@ -76,11 +84,11 @@ export default function Sponsors() {
           </Button>
         </div>
         <div className="grid16 col-span-full lg:translate-y-16">
-          <Marquee className="col-span-full">
-            {DATA_SPONSORS_1ST.map((sponsor, index) => (
+          <Marquee className="col-span-full" loop={0}>
+            {DATA_SPONSORS_1ST.map((sponsor) => (
               <div
                 key={sponsor.name}
-                className="h-[128px] w-[128px] border-x-[1px] border-custom-grey-middle bg-black p-4 lg:h-[224px] lg:w-[224px]"
+                className="-m-2 h-[128px] w-[128px] border-x-[1px] border-custom-grey-middle bg-black p-4 lg:h-[224px] lg:w-[224px]"
               >
                 <div className="relative h-full w-full">
                   <Image
@@ -97,10 +105,10 @@ export default function Sponsors() {
             direction="right"
             className="col-span-full border-t-[1px] border-custom-grey-middle"
           >
-            {DATA_SPONSORS_2ND.map((sponsor, index) => (
+            {DATA_SPONSORS_2ND.map((sponsor) => (
               <div
                 key={sponsor.name}
-                className="h-[128px] w-[128px] border-x-[1px] border-custom-grey-middle bg-black p-4 lg:h-[224px] lg:w-[224px]"
+                className="-m-2 h-[128px] w-[128px] border-x-[1px] border-custom-grey-middle bg-black p-4 lg:h-[224px] lg:w-[224px]"
               >
                 <div className="relative h-full w-full">
                   <Image

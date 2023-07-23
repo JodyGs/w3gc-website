@@ -1,9 +1,10 @@
 import React from "react";
-import Navbar from "./Navbar";
+import MobileMenu from "./MobileMenu";
 import Image from "next/image";
 import Button from "../Button";
 import { Logo } from "../svg/svg";
 import Link from "next/link";
+import Menu from "./Menu";
 
 export default function Navigation() {
   const logoRef = React.useRef<HTMLImageElement>(null);
@@ -17,8 +18,9 @@ export default function Navigation() {
       <Link href={"#"}>
         <Logo className="h-[24] w-[104px] md:h-12 md:w-[212px]" />
       </Link>
-      <Button className="hidden md:block">Pre-register</Button>
-      {/* <Navbar /> */}
+      <Button className="hidden lg:block">Pre-register</Button>
+      <MobileMenu />
+      <Menu />
     </nav>
   );
 }

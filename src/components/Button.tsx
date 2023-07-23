@@ -22,7 +22,7 @@ export default function Button({
         {
           "bg-custom-red-middle ring-[5px] ring-custom-red-middle/20 hover:border-transparent hover:bg-white hover:text-custom-red-middle hover:ring-transparent active:bg-custom-pink-light active:text-custom-red-darktext":
             variant === "primary",
-          "active:text-[#3a3c4b]] border-[1px] border-white/50 hover:border-transparent hover:bg-white hover:text-custom-grey-dark active:bg-[#C5C6CE]":
+          "border-[1px] border-white/50 hover:border-transparent hover:bg-white hover:text-custom-grey-dark active:bg-[#C5C6CE] active:text-[#3a3c4b]":
             variant === "secondary",
         },
         {

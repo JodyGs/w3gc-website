@@ -8,11 +8,11 @@
   }
 
   h1 {
-    @apply text-5xl font-extrabold uppercase leading-[48px] tracking-[2.4px];
+    @apply text-5xl font-extrabold uppercase leading-[48px] tracking-[2.4px] md:text-[136px] md:leading-none md:tracking-[6.8px];
   }
 
   h2 {
-    @apply text-xs font-extrabold uppercase leading-4;
+    @apply text-xs font-extrabold uppercase leading-4 md:text-base;
   }
 
   /* h3 {

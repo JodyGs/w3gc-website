@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../Button";
 import { LeftArrow, RightArrow } from "../svg/svg";
+import Image from "next/image";
 
 interface CarouselProps {
   slides: {
@@ -21,27 +22,29 @@ export default function Carousel(props: CarouselProps) {
 
   return (
     <>
-      <div className="relative overflow-hidden">
+      <div className="grid4 relative col-span-full">
         <div
-          className="flex space-x-2 transition-transform duration-500 ease-out"
-          style={{ transform: `translateX(-${curr * 50}%)` }}
+          className="col-span-full flex space-x-4 transition-transform duration-500 ease-out"
+          style={{ transform: `translateX(-${curr * 52}%)` }}
         >
           {props.slides.map(({ name, title, img, placeholder }) => (
             <div
-              className="min-h-[280px] min-w-[144px] bg-custom-red-dark"
+              className="relative min-h-[280px] min-w-[144px] bg-custom-red-dark"
               key={name}
-            ></div>
+            >
+              <Image src={img} alt={name} fill className="object-cover" />
+            </div>
           ))}
         </div>
       </div>
-      <div className="space-x-4">
+      <div className="col-span-full space-x-4">
         <Button
           onClick={prev}
           variant="secondary"
           size="small"
           className="group"
         >
-          <LeftArrow className="h-6 w-6 fill-white group-hover:fill-black" />
+          <LeftArrow className="h-6 w-6 fill-white group-hover:fill-black group-active:fill-[#3A3C4B]" />
         </Button>
         <Button
           onClick={next}
@@ -49,7 +52,7 @@ export default function Carousel(props: CarouselProps) {
           size="small"
           className="group"
         >
-          <RightArrow className="h-6 w-6 fill-white group-hover:fill-black" />
+          <RightArrow className="h-6 w-6 fill-white group-hover:fill-black group-active:fill-[#3A3C4B]" />
         </Button>
       </div>
     </>
