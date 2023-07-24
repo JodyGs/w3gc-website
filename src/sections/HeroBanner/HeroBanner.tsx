@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import Announcements from "~/components/announcements/Announcements";
 import Button from "~/components/Button";
+import HeroMax from "~/components/heroBanner/HeroMax";
+import HeroMin from "~/components/heroBanner/HeroMin";
 import Navigation from "~/components/navigation/Navigation";
 import { Calendar, France, Geometric } from "~/components/svg/svg";
 
@@ -15,7 +17,8 @@ const DATA_ANNOUNCEMENTS = [
   },
   {
     title: "Where?",
-    information: "Maison de la mutualité",
+    information: "Maison de ",
+    informationBis: "la mutualité",
     details: "Paris, France",
     icon: France,
   },
@@ -24,7 +27,7 @@ const DATA_ANNOUNCEMENTS = [
 export default function HeroBanner() {
   return (
     <>
-      <div className="relative w-full lg:pb-[200px]">
+      <div className="grid18 relative col-span-full w-full pb-20 md:mb-10 lg:mb-0 lg:pb-[200px]">
         <Navigation />
         <div className="absolute top-0 -z-10 min-h-[216px] w-full md:h-full lg:h-2/3">
           <Image
@@ -34,7 +37,7 @@ export default function HeroBanner() {
             className="absolute inset-0 -z-20 object-cover"
           />
         </div>
-        <Geometric className="animationStrobe absolute -left-36 -top-10 -z-10 h-[160px] md:-left-48 md:h-2/3 lg:-left-60 lg:h-3/6" />
+        <Geometric className="animationStrobe absolute -left-36 -top-10 -z-10 h-[160px] md:-left-48 md:h-2/3 lg:-top-48 lg:w-10/12" />
         <div className="absolute right-0 top-0 -z-10 h-[333px] w-[228px] md:right-1/2 md:h-[86%] md:w-[41.875%] md:translate-x-1/2 md:translate-y-5 lg:translate-y-0">
           <Image
             src={"/images/hero/person.webp"}
@@ -45,32 +48,10 @@ export default function HeroBanner() {
             className="animationFromBottom object-contain lg:mx-auto"
           />
         </div>
-        <div className="mx-2 space-y-8 pt-[72px] md:text-center">
-          <div>
-            <h1 className="mb-8">
-              Web3
-              <br />
-              Gaming Con
-            </h1>
-            <h2>
-              The first worldwide Web3 gaming conference at the heart of Paris
-            </h2>
-          </div>
-          <div className="space-y-2 xs:flex xs:justify-between xs:space-y-0 sm:px-11 lg:px-[88px]">
-            {DATA_ANNOUNCEMENTS.map(
-              ({ title, information, details, supplement, icon: Icon }) => (
-                <Announcements
-                  key={title}
-                  title={title}
-                  information={information}
-                  details={details}
-                  supplement={supplement}
-                  icon={Icon}
-                />
-              )
-            )}
-          </div>
-          <div className="mb-20 space-y-4 sm:flex sm:justify-center sm:space-x-4 sm:space-y-0 xl:mb-52">
+        <div className="md:grid16 md:col-span-16 col-span-full mx-2 space-y-8 pt-[72px] md:mx-0 md:text-center">
+          <HeroMax data={DATA_ANNOUNCEMENTS} />
+          <HeroMin data={DATA_ANNOUNCEMENTS} />
+          <div className="col-span-full mb-20 space-y-4 sm:flex sm:justify-center sm:space-x-4 sm:space-y-0 xl:mb-52">
             <Button className="w-full sm:w-fit" variant="primary">
               Pre-register
             </Button>

@@ -5,6 +5,7 @@ interface DataProps {
   data: {
     title: string;
     information: string;
+    informationBis?: string;
     details?: string;
     supplement?: string;
     icon: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -13,10 +14,28 @@ interface DataProps {
 
 export default function HeroMax(props: DataProps) {
   return (
-    <div className="col-span-16 grid16 relative hidden space-y-10 pb-10 xl:block">
-      <div className="absolute top-10 flex w-full justify-between">
-        <Announcements {...props.data[0]} />
-        <Announcements {...props.data[1]} />
+    <div className="relative col-span-full hidden space-y-10 pb-10 pt-[240px] xl:block">
+      <div className="absolute top-[330px] flex w-full justify-between">
+        {props.data.map(
+          ({
+            title,
+            information,
+            informationBis,
+            details,
+            supplement,
+            icon: Icon,
+          }) => (
+            <Announcements
+              key={title}
+              title={title}
+              information={information}
+              informationBis={informationBis}
+              details={details}
+              supplement={supplement}
+              icon={Icon}
+            />
+          )
+        )}
       </div>
       <h1>
         web3

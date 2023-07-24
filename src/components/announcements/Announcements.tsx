@@ -3,6 +3,7 @@ import React, { JSXElementConstructor } from "react";
 type Props = {
   title: string;
   information: string;
+  informationBis?: string;
   details: string;
   supplement?: string;
   icon: JSXElementConstructor<React.SVGProps<SVGSVGElement>>;
@@ -11,6 +12,7 @@ type Props = {
 export default function Announcements({
   title,
   information,
+  informationBis,
   details,
   supplement,
   icon: Icon,
@@ -26,7 +28,11 @@ export default function Announcements({
       </div>
       <div className="text-left text-xs uppercase leading-3 md:text-base md:leading-none">
         {supplement && <p className="font-extrabold">{supplement}</p>}
-        <p className="max-w-[140px] md:max-w-[200px]">{information}</p>
+        <p className="max-w-[140px] md:max-w-[200px]">
+          {information}
+          <br />
+          {informationBis}
+        </p>
         <p className="font-extrabold text-custom-red-middle">{details}</p>
       </div>
     </div>

@@ -14,7 +14,7 @@ interface DataProps {
 export default function HeroMin(props: DataProps) {
   return (
     <div className="col-span-full space-y-8 xl:hidden">
-      <div className="">
+      <div>
         <h1 className="mb-8">
           Web3
           <br />
@@ -26,11 +26,19 @@ export default function HeroMin(props: DataProps) {
       </div>
       <div className="space-y-2 xs:flex xs:justify-between xs:space-y-0 sm:px-11 lg:px-[88px]">
         {props.data.map(
-          ({ title, information, details, supplement, icon: Icon }) => (
+          ({
+            title,
+            information,
+            informationBis,
+            details,
+            supplement,
+            icon: Icon,
+          }) => (
             <Announcements
               key={title}
               title={title}
               information={information}
+              informationBis={informationBis}
               details={details}
               supplement={supplement}
               icon={Icon}
