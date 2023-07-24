@@ -26,7 +26,7 @@ export default function HeroBanner() {
     <>
       <div className="relative w-full lg:pb-[200px]">
         <Navigation />
-        <div className="absolute top-0 min-h-[216px] w-full lg:h-2/3">
+        <div className="absolute top-0 -z-10 min-h-[216px] w-full md:h-full lg:h-2/3">
           <Image
             src="/images/hero/w3gc-hero-bg.webp"
             alt="hero banner"
@@ -34,8 +34,8 @@ export default function HeroBanner() {
             className="absolute inset-0 -z-20 object-cover"
           />
         </div>
-        <Geometric className="animationStrobe absolute left-0 top-0 -z-10 sm:left-[-40px] sm:max-h-[200px] md:max-h-[300px]" />
-        <div className="absolute right-0 top-0 -z-10 h-[333px] w-[228px] lg:right-1/2 lg:h-[86%] lg:w-[41.875%] lg:translate-x-1/2">
+        <Geometric className="animationStrobe absolute -left-36 -top-10 -z-10 h-[160px] md:-left-48 md:h-2/3 lg:-left-60 lg:h-3/6" />
+        <div className="absolute right-0 top-0 -z-10 h-[333px] w-[228px] md:right-1/2 md:h-[86%] md:w-[41.875%] md:translate-x-1/2 md:translate-y-5 lg:translate-y-0">
           <Image
             src={"/images/hero/person.webp"}
             placeholder="blur"

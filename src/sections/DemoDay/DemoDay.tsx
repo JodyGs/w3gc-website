@@ -47,7 +47,7 @@ export default function DemoDay() {
         alt="background"
         src={DATA_PITCH_COMPETITION[currentbg]?.background.src as string}
         fill
-        className="absolute inset-0 -z-[1] object-cover duration-700"
+        className="absolute inset-0 -z-[1] object-cover object-center duration-700"
       />
       <div className=" absolute inset-0 z-[-1] bg-[#1D1E26]/60 object-cover"></div>
       <div className="md:grid18 px-2 md:col-span-full md:px-0">

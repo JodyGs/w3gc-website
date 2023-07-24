@@ -5,9 +5,9 @@ import { NAVIGATION } from "~/utils/constants";
 
 export default function Footer() {
   return (
-    <div className="grid18 px-2 py-20 md:col-span-full md:px-0">
-      <div className="grid18 space-y-16 md:col-span-full md:space-y-0">
-        <div className="col-span-11 col-start-2 col-end-12 space-y-8">
+    <div className="grid18 col-span-full px-2 py-20 md:px-0">
+      <div className="grid18 col-span-full space-y-16 md:space-y-0">
+        <div className="col-span-11 space-y-8 md:col-start-2 md:col-end-12">
           <GreyLogo className="h-[40px] w-[177px]" />
           <p className="max-w-[304px] font-inter text-base text-custom-grey-lighter">
             Web3 Gaming Con is a conference related to video games in the web3

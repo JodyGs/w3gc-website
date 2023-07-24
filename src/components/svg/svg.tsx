@@ -177,9 +177,12 @@ export function Geometric(props: React.ComponentProps<"svg">) {
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      viewBox="0 0 302 126"
+      viewBox="0 0 1137 401"
     >
-      <path fill="#FF003D" d="M302 126L17.777-41H-172l284.256 167H302z"></path>
+      <path
+        fill="#FF003D"
+        d="M1136.67 400.946L455.304.946H.354l681.444 400h454.872z"
+      ></path>
     </svg>
   );
 }

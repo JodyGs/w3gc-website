@@ -8,7 +8,7 @@
   }
 
   h1 {
-    @apply text-5xl font-extrabold uppercase leading-[48px] tracking-[2.4px] md:text-[136px] md:leading-none md:tracking-[6.8px];
+    @apply text-5xl font-extrabold uppercase leading-[48px] tracking-[2.4px] md:text-6xl md:leading-none md:tracking-[6.8px] xl:text-[136px];
   }
 
   h2 {

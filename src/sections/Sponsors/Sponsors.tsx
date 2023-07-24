@@ -77,14 +77,32 @@ export default function Sponsors() {
         />
       </div>
       <div className="md:col-span-16 md:grid16 relative col-span-full h-full w-full">
-        <div className="grid16 col-span-full px-2 pb-10 pt-20 md:flex md:justify-between">
-          <SectionHeading title="Sponsors" className="col-span-full -mb-2" />
+        <div className="grid16 col-span-full px-2 pb-10 pt-20 md:flex md:items-center md:justify-between">
+          <SectionHeading
+            title="Sponsors"
+            className="col-span-full -mb-2 md:-mb-8"
+          />
           <Button variant="secondary" className="col-span-full w-full md:w-fit">
             Become a sponsor
           </Button>
         </div>
         <div className="grid16 col-span-full lg:translate-y-16">
-          <Marquee className="col-span-full" loop={0}>
+          <Marquee className="col-span-full overflow-hidden" loop={0}>
+            {DATA_SPONSORS_1ST.map((sponsor) => (
+              <div
+                key={sponsor.name}
+                className="-m-2 h-[128px] w-[128px] border-x-[1px] border-custom-grey-middle bg-black p-4 lg:h-[224px] lg:w-[224px]"
+              >
+                <div className="relative h-full w-full">
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
+              </div>
+            ))}
             {DATA_SPONSORS_1ST.map((sponsor) => (
               <div
                 key={sponsor.name}
@@ -103,8 +121,25 @@ export default function Sponsors() {
           </Marquee>
           <Marquee
             direction="right"
-            className="col-span-full border-t-[1px] border-custom-grey-middle"
+            className="col-span-full overflow-hidden border-t-[1px] border-custom-grey-middle"
           >
+            {DATA_SPONSORS_2ND.map((sponsor) => (
+              <div
+                key={sponsor.name}
+                className="-m-2 h-[128px] w-[128px] border-x-[1px] border-custom-grey-middle bg-black p-4 lg:h-[224px] lg:w-[224px]"
+              >
+                <div className="relative h-full w-full">
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    layout="fill"
+                    objectFit="contain"
+                    placeholder="blur"
+                    blurDataURL={sponsor.placeholder}
+                  />
+                </div>
+              </div>
+            ))}
             {DATA_SPONSORS_2ND.map((sponsor) => (
               <div
                 key={sponsor.name}
