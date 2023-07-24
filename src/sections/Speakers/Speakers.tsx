@@ -55,13 +55,18 @@ function CustomButtonGroup({ next, previous }: ButtonGroupProps) {
 
 function CardSpeaker({ name, title, img, placeholder }: CardProps) {
   return (
-    <div className="relative h-full w-full">
+    <div className="group relative h-full w-full">
       <div className="">
         <Image src={img} alt={name} fill className="object-cover" />
+        <div className="absolute inset-0 bg-[#2c2d38] opacity-0 mix-blend-color transition duration-300 ease-out group-hover:opacity-0 lg:opacity-100"></div>
       </div>
-      <div className="absolute -bottom-0 z-10 space-y-2 bg-white p-4 text-custom-grey-middle ">
-        <h3 className="text-xs font-extrabold uppercase leading-4">{name}</h3>
-        <p className="font-inter text-xs leading-4">{title}</p>
+      <div className="absolute -bottom-[1px] z-10 w-full translate-y-0 space-y-2 bg-white p-4 text-custom-grey-middle transition-transform duration-300 ease-out group-hover:translate-y-0 md:p-8 lg:translate-y-full">
+        <h3 className="whitespace-nowrap text-xs font-extrabold uppercase leading-4 md:text-base md:leading-6">
+          {name}
+        </h3>
+        <p className="whitespace-pre font-inter text-xs leading-4 md:text-base lg:leading-6">
+          {title}
+        </p>
       </div>
     </div>
   );
@@ -70,8 +75,8 @@ function CardSpeaker({ name, title, img, placeholder }: CardProps) {
 export default function Speakers() {
   return (
     <section className="grid18 col-span-full px-2 pb-20 md:col-span-full">
-      <div className="grid16 md:col-span-16 col-span-full">
-        <div className="col-span-full lg:col-span-6">
+      <div className="md:col-span-16 md:grid16 col-span-full">
+        <div className="col-span-full md:col-span-6">
           <SectionHeading
             className="col-span-full"
             title="Speakers"
@@ -84,7 +89,7 @@ export default function Speakers() {
             Become a speaker
           </Button>
         </div>
-        <div className="grid4 col-span-full space-y-8 pt-8 lg:col-span-10">
+        <div className="col-span-full space-y-8 pt-8 md:col-span-10 md:col-start-7 md:col-end-17 md:grid md:grid-cols-10 md:pt-0">
           <Carousel
             additionalTransfrom={0}
             arrows={false}
@@ -92,25 +97,18 @@ export default function Speakers() {
             centerMode={false}
             className="col-span-full"
             containerClass="col-span-full"
-            customButtonGroup={
-              <CustomButtonGroup
-                carouselState={{
-                  totalItems: DATA_SPEAKERS.length,
-                  currentSlide: 0,
-                }}
-              />
-            }
+            customButtonGroup={<CustomButtonGroup />}
             dotListClass=""
             draggable
             focusOnSelect={false}
-            infinite
+            infinite={false}
             sliderClass="space-x-4"
-            itemClass="h-[280px]"
+            itemClass="h-[280px] xs:h-[380px] sm:h-[460px] md:h-[560px]"
             keyBoardControl
             minimumTouchDrag={80}
             pauseOnHover
             renderArrowsWhenDisabled={false}
-            renderButtonGroupOutside
+            renderButtonGroupOutside={true}
             renderDotsOutside={false}
             responsive={{
               xl: {
@@ -154,7 +152,6 @@ export default function Speakers() {
           </Carousel>
         </div>
       </div>
-      <CustomButtonGroup />
     </section>
   );
 }
