@@ -14,7 +14,7 @@ export default function Navigation() {
   }, []);
 
   return (
-    <nav className="z-50 col-span-full justify-between px-2 pt-6 md:flex">
+    <nav className="md:col-span-16 grid16 z-50 justify-between px-2 pt-6 md:flex">
       <Link href={"#"}>
         <Logo className="h-[24] w-[104px] md:h-12 md:w-[212px]" />
       </Link>
