@@ -10,7 +10,7 @@ const DialogDemo = () => (
   <Dialog.Root>
     <Dialog.Trigger asChild>
       <button
-        className="rounded-sm bg-custom-grey-light p-3"
+        className="rounded-sm bg-custom-grey-light p-3 md:hidden"
         aria-label="Customise options"
       >
         <Burger className="h-5 w-5" />
@@ -59,7 +59,7 @@ const DialogDemo = () => (
 export default function MobileMenu() {
   return (
     <div className="fixed bottom-4 right-4 z-10 rounded-lg bg-[#1d1e26]/60 p-2 md:hidden">
-      <DialogDemo className={"md:hidden"} />
+      <DialogDemo />
     </div>
   );
 }

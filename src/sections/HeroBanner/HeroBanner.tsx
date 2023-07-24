@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import Announcements from "~/components/announcements/Announcements";
 import Button from "~/components/Button";
 import HeroMax from "~/components/heroBanner/HeroMax";
 import HeroMin from "~/components/heroBanner/HeroMin";

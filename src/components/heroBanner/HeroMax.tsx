@@ -6,7 +6,7 @@ interface DataProps {
     title: string;
     information: string;
     informationBis?: string;
-    details?: string;
+    details: string;
     supplement?: string;
     icon: React.FC<React.SVGProps<SVGSVGElement>>;
   }[];

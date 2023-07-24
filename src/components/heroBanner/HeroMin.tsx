@@ -5,7 +5,8 @@ interface DataProps {
   data: {
     title: string;
     information: string;
-    details?: string;
+    informationBis?: string;
+    details: string;
     supplement?: string;
     icon: React.FC<React.SVGProps<SVGSVGElement>>;
   }[];

@@ -2,15 +2,15 @@ import React from "react";
 import Button from "../Button";
 import { Booster, Connect, PrizePool, Pitch } from "../svg/svg";
 import Hashtag from "../DemoDay/Hashtags";
+import { StaticImageData } from "next/image";
+import clsx from "clsx";
 
 interface Data {
   slides: {
     name: string;
-    title: string;
-    img: string;
     description: string;
-    svg: React.JSX.Element;
-    background: string;
+    svg: (props: React.SVGProps<SVGSVGElement>) => React.JSX.Element;
+    background: StaticImageData;
   }[];
   modifyBackground?: (index: number) => void;
 }
@@ -35,10 +35,15 @@ export default function HorizontalSlider(props: Data) {
             className="absolute inset-0  transition-transform duration-500 ease-out"
             style={{ transform: `translateY(-${curr * 128}px)` }}
           >
-            <Pitch className="h-32 w-32" />
-            <Booster className="h-32 w-32 fill-white" />
-            <Connect className="h-32 w-32 stroke-white" />
-            <PrizePool className="h-32 w-32 stroke-white" />
+            <Pitch
+              className={
+                (clsx(curr == 0 ? "stroke-white" : "stroke-custom-red-middle"),
+                "h-32 w-32")
+              }
+            />
+            <Booster className="h-32 w-32 " />
+            <Connect className="h-32 w-32" />
+            <PrizePool className="h-32 w-32" />
           </div>
         </div>
         <div className="lg:pt-26 hidden space-y-4 pt-8 md:block xl:flex xl:space-x-2 xl:space-y-0 xl:pt-28">

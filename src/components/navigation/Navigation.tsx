@@ -1,6 +1,5 @@
 import React from "react";
 import MobileMenu from "./MobileMenu";
-import Image from "next/image";
 import Button from "../Button";
 import { Logo } from "../svg/svg";
 import Link from "next/link";
