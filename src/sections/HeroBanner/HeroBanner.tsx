@@ -36,7 +36,7 @@ export default function HeroBanner() {
             className="absolute inset-0 -z-20 object-cover"
           />
         </div>
-        <Geometric className="animationStrobe absolute -left-36 -top-10 -z-10 h-[160px] md:-left-48 md:h-2/3 lg:-top-48 lg:w-10/12" />
+        <Geometric className="animationStrobe absolute -left-36 -top-10 -z-10 h-[160px] md:-left-48 md:h-2/3 lg:-top-48 lg:w-10/12 xl:-top-56" />
         <div className="absolute right-0 top-0 -z-10 h-[333px] w-[228px] md:right-1/2 md:h-[86%] md:w-[41.875%] md:translate-x-1/2 md:translate-y-5 lg:translate-y-0">
           <Image
             src={"/images/hero/person.webp"}

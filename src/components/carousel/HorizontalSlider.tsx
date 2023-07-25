@@ -71,6 +71,7 @@ export default function HorizontalSlider(props: Data) {
         </div>
       </div>
       <div className="relative col-span-full space-y-2 md:col-span-8 md:col-start-10">
+        <div className="absolute -top-3/4 left-0 -z-[1] hidden h-[352px] w-[224px] bg-custom-red-middle xl:block"></div>
         {props.slides.map((pitch, index) => (
           <div
             onMouseEnter={() => changeStates(index)}

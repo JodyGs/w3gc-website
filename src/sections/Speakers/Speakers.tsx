@@ -3,7 +3,11 @@ import Button from "~/components/Button";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import SectionHeading from "~/components/headings/SectionHeading";
-import { LeftArrow, RightArrow } from "~/components/svg/svg";
+import {
+  LeftArrow,
+  RightArrow,
+  SpeakersDecoration,
+} from "~/components/svg/svg";
 import Image from "next/image";
 import { ButtonGroupProps } from "react-multi-carousel/lib/types";
 
@@ -86,7 +90,8 @@ function CardSpeaker({ name, title, img, placeholder }: CardProps) {
 
 export default function Speakers() {
   return (
-    <section className="grid18 col-span-full px-2 pb-20 md:col-span-full">
+    <section className="grid18 relative col-span-full px-2 pb-20 md:col-span-full xl:py-[280px]">
+      <div className="absolute right-0 top-[112px] hidden h-[224px] w-[680px] bg-custom-red-middle xl:block"></div>
       <div className="md:col-span-16 md:grid16 col-span-full">
         <div className="col-span-full md:col-span-6">
           <SectionHeading
@@ -119,7 +124,7 @@ export default function Speakers() {
           </div>
           <Button
             variant="secondary"
-            className="col-span-full mt-8 w-full md:w-fit"
+            className="col-span-full mt-8 hidden w-full md:block md:w-fit"
           >
             Become a speaker
           </Button>
@@ -186,6 +191,12 @@ export default function Speakers() {
             ))}
           </Carousel>
         </div>
+        <Button
+          variant="secondary"
+          className="col-span-full mt-8 w-full md:hidden md:w-fit"
+        >
+          Become a speaker
+        </Button>
       </div>
     </section>
   );

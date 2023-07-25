@@ -464,3 +464,19 @@ export function Cross(props: React.ComponentProps<"svg">) {
     </svg>
   );
 }
+export function SpeakersDecoration(props: React.ComponentProps<"svg">) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 1024 928"
+    >
+      <path
+        stroke="#fff"
+        d="M1.84.5h1362.87l2042.39 1199H2044.47L1.84.5z"
+        opacity="0.4"
+      ></path>
+    </svg>
+  );
+}
