@@ -1,9 +1,7 @@
 import { Burger, Cross, RightArrow } from "../svg/svg";
 import React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import Button from "../Button";
 import Link from "next/link";
-import Mission from "../../sections/Mission/Mission";
 import { NAVIGATION } from "~/utils/constants";
 
 const DialogDemo = () => (
@@ -17,8 +15,8 @@ const DialogDemo = () => (
       </button>
     </Dialog.Trigger>
     <Dialog.Portal>
-      <Dialog.Overlay className="" />
-      <Dialog.Content className="fixed bottom-2 left-1/2 z-30 mx-auto h-[268px] w-[288px] -translate-x-1/2 space-y-2 rounded-lg bg-black p-2">
+      <Dialog.Overlay className="px-4" />
+      <Dialog.Content className="fixed bottom-2 left-1/2 z-50 mx-auto max-h-[268px] w-full -translate-x-1/2 space-y-2 rounded-lg bg-black p-2">
         <nav>
           <ul className="space-y-2 text-[#D4D6DC]">
             {NAVIGATION.anchor.map((item, index) => (
@@ -58,7 +56,7 @@ const DialogDemo = () => (
 
 export default function MobileMenu() {
   return (
-    <div className="fixed bottom-4 right-4 z-10 rounded-lg bg-[#1d1e26]/60 p-2 md:hidden">
+    <div className="fixed bottom-4 right-4 rounded-lg bg-[#1d1e26]/60 p-2 md:hidden">
       <DialogDemo />
     </div>
   );
