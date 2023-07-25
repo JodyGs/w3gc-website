@@ -37,16 +37,23 @@ const DATA_SPEAKERS = [
 
 function CustomButtonGroup({ next, previous }: ButtonGroupProps) {
   return (
-    <div className="col-span-full space-x-4">
+    <div className="col-span-full space-x-4 xl:hidden">
       <Button
         onClick={previous}
         variant="secondary"
         size="small"
         className="group"
+        id="previous"
       >
         <LeftArrow className="h-6 w-6 fill-white group-hover:fill-black group-active:fill-[#3A3C4B]" />
       </Button>
-      <Button onClick={next} variant="secondary" size="small" className="group">
+      <Button
+        id="next"
+        onClick={next}
+        variant="secondary"
+        size="small"
+        className="group"
+      >
         <RightArrow className="h-6 w-6 fill-white group-hover:fill-black group-active:fill-[#3A3C4B]" />
       </Button>
     </div>
@@ -56,8 +63,13 @@ function CustomButtonGroup({ next, previous }: ButtonGroupProps) {
 function CardSpeaker({ name, title, img, placeholder }: CardProps) {
   return (
     <div className="group relative h-full w-full">
-      <div className="">
-        <Image src={img} alt={name} fill className="object-cover" />
+      <div className="overflow-hidden">
+        <Image
+          src={img}
+          alt={name}
+          fill
+          className="object-cover transition-transform duration-300 ease-out group-hover:scale-110"
+        />
         <div className="absolute inset-0 bg-[#2c2d38] opacity-0 mix-blend-color transition duration-300 ease-out group-hover:opacity-0 lg:opacity-100"></div>
       </div>
       <div className="absolute -bottom-[1px] z-10 w-full translate-y-0 space-y-2 bg-white p-4 text-custom-grey-middle transition-transform duration-300 ease-out group-hover:translate-y-0 md:p-8 lg:translate-y-full">
@@ -82,6 +94,30 @@ export default function Speakers() {
             title="Speakers"
             description="Lorem ipsum dolor sit amet consectetur. Interdum nunc sem facilisis egestas mauris. Et amet vehicula nulla ullamcorper venenatis dictum velit. Sit adipiscing aliquam lectus volutpat suspendisse. Sit lacus diam egestas ut."
           />
+          <div className="col-span-full mb-[180px] mt-8 hidden space-x-4 xl:flex">
+            <Button
+              onClick={() => {
+                document.getElementById("previous")?.click();
+              }}
+              variant="secondary"
+              size="small"
+              className="group"
+              id="previous"
+            >
+              <LeftArrow className="h-6 w-6 fill-white group-hover:fill-black group-active:fill-[#3A3C4B]" />
+            </Button>
+            <Button
+              onClick={() => {
+                document.getElementById("next")?.click();
+              }}
+              onClick={next}
+              variant="secondary"
+              size="small"
+              className="group"
+            >
+              <RightArrow className="h-6 w-6 fill-white group-hover:fill-black group-active:fill-[#3A3C4B]" />
+            </Button>
+          </div>
           <Button
             variant="secondary"
             className="col-span-full mt-8 w-full md:w-fit"

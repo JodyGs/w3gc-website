@@ -36,14 +36,29 @@ export default function HorizontalSlider(props: Data) {
             style={{ transform: `translateY(-${curr * 128}px)` }}
           >
             <Pitch
-              className={
-                (clsx(curr == 0 ? "stroke-white" : "stroke-custom-red-middle"),
-                "h-32 w-32")
-              }
+              className={clsx(
+                curr == 0 ? "text-white" : "text-custom-red-middle",
+                "h-32 w-32"
+              )}
             />
-            <Booster className="h-32 w-32 " />
-            <Connect className="h-32 w-32" />
-            <PrizePool className="h-32 w-32" />
+            <Booster
+              className={clsx(
+                curr == 1 ? "text-white" : "text-custom-red-middle",
+                "h-32 w-32"
+              )}
+            />
+            <Connect
+              className={clsx(
+                curr == 2 ? "text-white" : "text-custom-red-middle",
+                "h-32 w-32"
+              )}
+            />
+            <PrizePool
+              className={clsx(
+                curr == 3 ? "text-white" : "text-custom-red-middle",
+                "h-32 w-32"
+              )}
+            />
           </div>
         </div>
         <div className="lg:pt-26 hidden space-y-4 pt-8 md:block xl:flex xl:space-x-2 xl:space-y-0 xl:pt-28">
