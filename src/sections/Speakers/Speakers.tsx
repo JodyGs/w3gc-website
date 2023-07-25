@@ -110,7 +110,6 @@ export default function Speakers() {
               onClick={() => {
                 document.getElementById("next")?.click();
               }}
-              onClick={next}
               variant="secondary"
               size="small"
               className="group"
