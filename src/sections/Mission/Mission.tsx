@@ -48,7 +48,7 @@ export default function Mission() {
     <section className="grid18 relative -z-20 col-span-full h-full w-full bg-custom-red-middle py-20">
       <Image
         alt="mission background"
-        src="/images/mission/bg-mission.webp"
+        src="/images/mission/bg-mission.png"
         fill
         className="absolute inset-0 -z-10 object-cover object-center"
       />

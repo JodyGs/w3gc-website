@@ -26,7 +26,7 @@ export default function Button({
             variant === "secondary",
         },
         {
-          "p-4": size === "small",
+          "px-4 py-3": size === "small",
           "px-6 py-4": size === "default",
         }
       )}

@@ -5,7 +5,7 @@ import { NAVIGATION } from "~/utils/constants";
 
 export default function Footer() {
   return (
-    <div className="grid18 col-span-full px-2 py-20 md:px-0">
+    <div className="grid18 col-span-full px-2 py-20 md:px-0 lg:py-40">
       <div className="grid18 col-span-full space-y-16 md:space-y-0">
         <div className="col-span-11 space-y-8 md:col-start-2 md:col-end-12">
           <GreyLogo className="h-[40px] w-[177px]" />

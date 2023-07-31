@@ -17,7 +17,9 @@ export default function Navigation() {
       <Link href={"#"}>
         <Logo className="h-[24] w-[104px] md:h-12 md:w-[212px]" />
       </Link>
-      <Button className="hidden lg:block">Pre-register</Button>
+      <Button size="small" className="hidden lg:block">
+        Pre-register
+      </Button>
       <MobileMenu />
       <Menu />
     </nav>
