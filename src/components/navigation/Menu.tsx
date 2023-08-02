@@ -11,8 +11,13 @@ export default function Menu() {
           <LogoNav className="h-4 w-[37.6px]" />
         </div>
         <nav className="flex items-center">
-          <div className="flex items-center justify-center pl-5 pr-3">
-            <RightArrow className="h-4 w-4 -rotate-90 scale-110 fill-white" />
+          <div className="flex items-center justify-center pl-2">
+            <Link
+              href="#home"
+              className="rounded-[2px] border-[1px] border-transparent p-2 px-4 py-3 text-[#D4D6DC] transition-all hover:border-[#686A7A] hover:text-white active:border-white active:bg-white active:text-[#2C2D38]"
+            >
+              <RightArrow className="h-4 w-4 -rotate-90 scale-110 fill-white active:fill-[#2c2d38]" />
+            </Link>
           </div>
           <ul className="flex space-x-2 p-2">
             {NAVIGATION.anchor.map((item, index) => (

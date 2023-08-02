@@ -67,7 +67,7 @@ const DATA_SPONSORS_2ND = [
 
 export default function Sponsors() {
   return (
-    <section className="grid18 relative col-span-full space-y-10">
+    <section id="sponsors" className="grid18 relative col-span-full space-y-10">
       <div className="absolute h-full w-full">
         <Image
           src="/images/sponsors/bg-sponsors.webp"

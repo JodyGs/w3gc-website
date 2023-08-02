@@ -15,9 +15,9 @@ export const NAVIGATION = {
     { name: "Contact us", href: "/contact-us" },
   ],
   anchor: [
-    { name: "Mission", href: "#" },
-    { name: "Speakers", href: "#" },
-    { name: "Sponsors", href: "#" },
-    { name: "Demo Day", href: "#" },
+    { name: "Mission", href: "#mission" },
+    { name: "Speakers", href: "#speakers" },
+    { name: "Sponsors", href: "#sponsors" },
+    { name: "Demo Day", href: "#demoday" },
   ],
 };

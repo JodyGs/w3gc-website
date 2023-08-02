@@ -326,7 +326,7 @@ export function RightArrow(props: React.ComponentProps<"svg">) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
+      fill="currentColor"
       viewBox="0 0 24 24"
     >
       <path d="M20.854 12.646H3.146v-1H18.44l-3.5-3.5h1.415l4.5 4.5zm-5.622 3.5l2-2h1.414l-2 2h-1.414z"></path>
@@ -392,7 +392,12 @@ export function Connect(props: React.ComponentProps<"svg">) {
 }
 export function Booster(props: React.ComponentProps<"svg">) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 104 104">
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 104 104"
+    >
       <g fill="currentColor" clipPath="url(#a)">
         <path d="M0 26v-1.414l20.707 20.707L20 46 0 26zm46.414 78H45L6 65l.707-.707L46.414 104zm43 0H88l-.722-.722-1.167-2.581L89.414 104zm3 0H91l-6.198-6.197-1.166-2.581L92.414 104zm3 0H94L82.328 92.328l-1.167-2.581L95.414 104zm3 0H97L79.853 86.853l-1.167-2.581L98.414 104zm3 0H100L77.726 81.726a3.62 3.62 0 01.094-1.32L101.414 104zm2.586-.414V104h-1L78.31 79.311a3.618 3.618 0 01.667-.748L104 103.586zm0-3V102L79.965 77.965a3.63 3.63 0 011.157-.257L104 100.586zm0-3V99L83.202 78.202l2.58 1.166L104 97.587zm0-3V96L88.677 80.677l2.58 1.167L104 94.586zm0-3V93l-9.848-9.848 2.58 1.167L104 91.586zm0-3V90l-4.373-4.373 2.581 1.166L104 88.587zm0-34V56L52 4l.707-.707L104 54.586zM37.432 43.234l5.656-5.657-.707-.707-5.657 5.657.708.707z"></path>
         <path

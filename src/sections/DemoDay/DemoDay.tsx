@@ -42,7 +42,10 @@ export default function DemoDay() {
   const [currentbg, setCurrentbg] = React.useState(0);
 
   return (
-    <section className="md:grid18 relative col-span-full py-20 lg:pb-[200px] lg:pt-60">
+    <section
+      id="demoday"
+      className="md:grid18 relative col-span-full py-20 lg:pb-[200px] lg:pt-60"
+    >
       <Image
         alt="background"
         src={DATA_PITCH_COMPETITION[currentbg]?.background.src as string}

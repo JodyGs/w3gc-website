@@ -90,7 +90,10 @@ function CardSpeaker({ name, title, img, placeholder }: CardProps) {
 
 export default function Speakers() {
   return (
-    <section className="grid18 relative col-span-full px-2 pb-20 md:col-span-full xl:py-[280px]">
+    <section
+      id="speakers"
+      className="grid18 relative col-span-full px-2 pb-20 md:col-span-full xl:py-[280px]"
+    >
       <div className="absolute right-0 top-[112px] hidden h-[224px] w-[680px] bg-custom-red-middle xl:block"></div>
       <div className="md:col-span-16 md:grid16 col-span-full">
         <div className="col-span-full md:col-span-6">

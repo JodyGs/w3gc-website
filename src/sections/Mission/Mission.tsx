@@ -45,11 +45,16 @@ const DATA_CARD = [
 
 export default function Mission() {
   return (
-    <section className="grid18 relative -z-20 col-span-full h-full w-full bg-custom-red-middle py-20">
+    <section
+      id="mission"
+      className="grid18 relative -z-20 col-span-full h-full w-full bg-custom-red-middle py-20"
+    >
       <Image
         alt="mission background"
         src="/images/mission/bg-mission.png"
         fill
+        placeholder="blur"
+        blurDataURL="/images/mission/bg-mission-placeholder.webp"
         className="absolute inset-0 -z-10 object-cover object-center"
       />
       <div className="vertical-line"></div>
