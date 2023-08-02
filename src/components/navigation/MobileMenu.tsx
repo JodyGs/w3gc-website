@@ -1,8 +1,8 @@
 import { Burger, Cross, RightArrow } from "../svg/svg";
 import React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import Link from "next/link";
 import { NAVIGATION } from "~/utils/constants";
+import AnchorLink from "react-anchor-link-smooth-scroll-v2";
 
 const DialogDemo = () => (
   <Dialog.Root>
@@ -24,16 +24,19 @@ const DialogDemo = () => (
                 key={index}
                 className="px-4 py-3 text-center font-inter text-sm leading-5"
               >
-                <Link href={item.href}>{item.name}</Link>
+                <AnchorLink href={item.href}>{item.name}</AnchorLink>
               </li>
             ))}
           </ul>
         </nav>
         <div className="flex w-full space-x-2">
           <Dialog.Close asChild>
-            <button className="rounded-[4px] border-[1px] border-custom-grey-middle p-3">
+            <AnchorLink
+              href="#home"
+              className="rounded-[4px] border-[1px] border-custom-grey-middle p-3"
+            >
               <RightArrow className="h-5 w-5 -rotate-90 fill-white" />
-            </button>
+            </AnchorLink>
           </Dialog.Close>
           <Dialog.Close asChild>
             <button className="flex-1 rounded-[4px] bg-custom-red-middle px-4 py-3 text-center font-bold text-white">

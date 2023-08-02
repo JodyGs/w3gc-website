@@ -3,6 +3,8 @@ import Button from "~/components/Button";
 import SectionHeading from "~/components/headings/SectionHeading";
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
+import { CONTAINER_VARIANTS, ITEM_VARIANTS } from "~/utils/anim";
+import { motion } from "framer-motion";
 
 const DATA_SPONSORS_1ST = [
   {
@@ -67,17 +69,30 @@ const DATA_SPONSORS_2ND = [
 
 export default function Sponsors() {
   return (
-    <section id="sponsors" className="grid18 relative col-span-full space-y-10">
-      <div className="absolute h-full w-full">
+    <motion.section
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true }}
+      variants={CONTAINER_VARIANTS}
+      id="sponsors"
+      className="grid18 relative col-span-full space-y-10"
+    >
+      <motion.div variants={ITEM_VARIANTS} className="absolute h-full w-full">
         <Image
           src="/images/sponsors/bg-sponsors.webp"
           alt="Sponsors"
           fill
           className="absolute inset-0 -z-20 object-cover object-center opacity-60"
         />
-      </div>
-      <div className="md:col-span-16 md:grid16 relative col-span-full h-full w-full">
-        <div className="grid16 col-span-full px-2 pb-10 pt-20 md:flex md:items-center md:justify-between">
+      </motion.div>
+      <motion.div
+        variants={ITEM_VARIANTS}
+        className="md:col-span-16 md:grid16 relative col-span-full h-full w-full"
+      >
+        <motion.div
+          variants={ITEM_VARIANTS}
+          className="grid16 col-span-full px-2 pb-10 pt-20 md:flex md:items-center md:justify-between"
+        >
           <SectionHeading
             title="Sponsors"
             className="col-span-full -mb-2 md:-mb-8"
@@ -85,38 +100,49 @@ export default function Sponsors() {
           <Button variant="secondary" className="col-span-full w-full md:w-fit">
             Become a sponsor
           </Button>
-        </div>
-        <div className="grid16 col-span-full lg:translate-y-16">
+        </motion.div>
+        <motion.div
+          variants={ITEM_VARIANTS}
+          className="grid16 col-span-full lg:translate-y-16"
+        >
           <Marquee className="col-span-full overflow-hidden" loop={0}>
             {DATA_SPONSORS_1ST.map((sponsor) => (
-              <div
+              <motion.div
+                variants={ITEM_VARIANTS}
                 key={sponsor.name}
                 className="-m-2 h-[128px] w-[128px] border-x-[1px] border-custom-grey-middle bg-black p-4 lg:h-[224px] lg:w-[224px]"
               >
-                <div className="relative h-full w-full">
+                <motion.div
+                  variants={ITEM_VARIANTS}
+                  className="relative h-full w-full"
+                >
                   <Image
                     src={sponsor.logo}
                     alt={sponsor.name}
                     layout="fill"
                     objectFit="cover"
                   />
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             ))}
             {DATA_SPONSORS_1ST.map((sponsor) => (
-              <div
+              <motion.div
+                variants={ITEM_VARIANTS}
                 key={sponsor.name}
                 className="-m-2 h-[128px] w-[128px] border-x-[1px] border-custom-grey-middle bg-black p-4 lg:h-[224px] lg:w-[224px]"
               >
-                <div className="relative h-full w-full">
+                <motion.div
+                  variants={ITEM_VARIANTS}
+                  className="relative h-full w-full"
+                >
                   <Image
                     src={sponsor.logo}
                     alt={sponsor.name}
                     layout="fill"
                     objectFit="cover"
                   />
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             ))}
           </Marquee>
           <Marquee
@@ -124,11 +150,15 @@ export default function Sponsors() {
             className="col-span-full overflow-hidden border-t-[1px] border-custom-grey-middle"
           >
             {DATA_SPONSORS_2ND.map((sponsor) => (
-              <div
+              <motion.div
+                variants={ITEM_VARIANTS}
                 key={sponsor.name}
                 className="-m-2 h-[128px] w-[128px] border-x-[1px] border-custom-grey-middle bg-black p-4 lg:h-[224px] lg:w-[224px]"
               >
-                <div className="relative h-full w-full">
+                <motion.div
+                  variants={ITEM_VARIANTS}
+                  className="relative h-full w-full"
+                >
                   <Image
                     src={sponsor.logo}
                     alt={sponsor.name}
@@ -137,15 +167,19 @@ export default function Sponsors() {
                     placeholder="blur"
                     blurDataURL={sponsor.placeholder}
                   />
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             ))}
             {DATA_SPONSORS_2ND.map((sponsor) => (
-              <div
+              <motion.div
+                variants={ITEM_VARIANTS}
                 key={sponsor.name}
                 className="-m-2 h-[128px] w-[128px] border-x-[1px] border-custom-grey-middle bg-black p-4 lg:h-[224px] lg:w-[224px]"
               >
-                <div className="relative h-full w-full">
+                <motion.div
+                  variants={ITEM_VARIANTS}
+                  className="relative h-full w-full"
+                >
                   <Image
                     src={sponsor.logo}
                     alt={sponsor.name}
@@ -154,12 +188,12 @@ export default function Sponsors() {
                     placeholder="blur"
                     blurDataURL={sponsor.placeholder}
                   />
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             ))}
           </Marquee>
-        </div>
-      </div>
-    </section>
+        </motion.div>
+      </motion.div>
+    </motion.section>
   );
 }

@@ -26,7 +26,11 @@ export default function Menu() {
                 key={index}
                 className="rounded-[2px] border-[1px] border-transparent px-4 py-3 text-center font-inter text-sm leading-5 text-[#D4D6DC] transition-all hover:border-[#686A7A] hover:text-white active:border-white active:bg-white active:text-[#2C2D38]"
               >
-                <AnchorLink href={item.href} className="whitespace-nowrap">
+                <AnchorLink
+                  href={item.href}
+                  offset={item.offset}
+                  className="whitespace-nowrap"
+                >
                   {item.name}
                 </AnchorLink>
               </li>

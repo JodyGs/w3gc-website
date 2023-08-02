@@ -10,6 +10,8 @@ import {
 } from "~/components/svg/svg";
 import Image from "next/image";
 import { ButtonGroupProps } from "react-multi-carousel/lib/types";
+import { motion } from "framer-motion";
+import { CONTAINER_VARIANTS, ITEM_VARIANTS } from "~/utils/anim";
 
 type CardProps = {
   name: string;
@@ -41,7 +43,10 @@ const DATA_SPEAKERS = [
 
 function CustomButtonGroup({ next, previous }: ButtonGroupProps) {
   return (
-    <div className="col-span-full space-x-4 xl:hidden">
+    <motion.div
+      variants={ITEM_VARIANTS}
+      className="col-span-full space-x-4 xl:hidden"
+    >
       <Button
         onClick={previous}
         variant="secondary"
@@ -60,49 +65,74 @@ function CustomButtonGroup({ next, previous }: ButtonGroupProps) {
       >
         <RightArrow className="h-6 w-6 fill-white group-hover:fill-black group-active:fill-[#3A3C4B]" />
       </Button>
-    </div>
+    </motion.div>
   );
 }
 
 function CardSpeaker({ name, title, img, placeholder }: CardProps) {
   return (
-    <div className="group relative h-full w-full">
-      <div className="overflow-hidden">
+    <motion.div
+      variants={ITEM_VARIANTS}
+      className="group relative h-full w-full"
+    >
+      <motion.div variants={ITEM_VARIANTS} className="overflow-hidden">
         <Image
           src={img}
           alt={name}
           fill
           className="object-cover transition-transform duration-300 ease-out group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-[#2c2d38] opacity-0 mix-blend-color transition duration-300 ease-out group-hover:opacity-0 lg:opacity-100"></div>
-      </div>
-      <div className="absolute -bottom-[1px] z-10 w-full translate-y-0 space-y-2 bg-white p-4 text-custom-grey-middle transition-transform duration-300 ease-out group-hover:translate-y-0 md:p-8 lg:translate-y-full">
+        <motion.div
+          variants={ITEM_VARIANTS}
+          className="absolute inset-0 bg-[#2c2d38] opacity-0 mix-blend-color transition duration-300 ease-out group-hover:opacity-0 lg:opacity-100"
+        ></motion.div>
+      </motion.div>
+      <motion.div
+        variants={ITEM_VARIANTS}
+        className="absolute -bottom-[1px] z-10 w-full translate-y-0 space-y-2 bg-white p-4 text-custom-grey-middle transition-transform duration-300 ease-out group-hover:translate-y-0 md:p-8 lg:translate-y-full"
+      >
         <h3 className="whitespace-nowrap text-xs font-extrabold uppercase leading-4 md:text-base md:leading-6">
           {name}
         </h3>
         <p className="whitespace-pre font-inter text-xs leading-4 md:text-base lg:leading-6">
           {title}
         </p>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
 export default function Speakers() {
   return (
-    <section
+    <motion.section
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true }}
+      variants={CONTAINER_VARIANTS}
       id="speakers"
       className="grid18 relative col-span-full px-2 pb-20 md:col-span-full xl:py-[280px]"
     >
-      <div className="absolute right-0 top-[112px] hidden h-[224px] w-[680px] bg-custom-red-middle xl:block"></div>
-      <div className="md:col-span-16 md:grid16 col-span-full">
-        <div className="col-span-full md:col-span-6">
+      <motion.div
+        variants={ITEM_VARIANTS}
+        className="absolute right-0 top-[112px] hidden h-[224px] w-[680px] bg-custom-red-middle xl:block"
+      ></motion.div>
+      <motion.div
+        variants={ITEM_VARIANTS}
+        className="md:col-span-16 md:grid16 col-span-full"
+      >
+        <motion.div
+          variants={ITEM_VARIANTS}
+          className="col-span-full md:col-span-6"
+        >
           <SectionHeading
             className="col-span-full"
             title="Speakers"
             description="Lorem ipsum dolor sit amet consectetur. Interdum nunc sem facilisis egestas mauris. Et amet vehicula nulla ullamcorper venenatis dictum velit. Sit adipiscing aliquam lectus volutpat suspendisse. Sit lacus diam egestas ut."
           />
-          <div className="col-span-full mb-[180px] mt-8 hidden space-x-4 xl:flex">
+          <motion.div
+            variants={ITEM_VARIANTS}
+            className="col-span-full mb-[180px] mt-8 hidden space-x-4 xl:flex"
+          >
             <Button
               onClick={() => {
                 document.getElementById("previous")?.click();
@@ -124,15 +154,18 @@ export default function Speakers() {
             >
               <RightArrow className="h-6 w-6 fill-white group-hover:fill-black group-active:fill-[#3A3C4B]" />
             </Button>
-          </div>
+          </motion.div>
           <Button
             variant="secondary"
             className="col-span-full mt-8 hidden w-full md:block md:w-fit"
           >
             Become a speaker
           </Button>
-        </div>
-        <div className="col-span-full space-y-8 pt-8 md:col-span-10 md:col-start-7 md:col-end-17 md:grid md:grid-cols-10 md:pt-0">
+        </motion.div>
+        <motion.div
+          variants={ITEM_VARIANTS}
+          className="col-span-full space-y-8 pt-8 md:col-span-10 md:col-start-7 md:col-end-17 md:grid md:grid-cols-10 md:pt-0"
+        >
           <Carousel
             additionalTransfrom={0}
             arrows={false}
@@ -193,14 +226,14 @@ export default function Speakers() {
               />
             ))}
           </Carousel>
-        </div>
+        </motion.div>
         <Button
           variant="secondary"
           className="col-span-full mt-8 w-full md:hidden md:w-fit"
         >
           Become a speaker
         </Button>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }
