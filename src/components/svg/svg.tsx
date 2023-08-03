@@ -424,7 +424,7 @@ export function Booster(props: React.ComponentProps<"svg">) {
       </g>
       <defs>
         <clipPath id="a">
-          <path fill="currentColor" d="M0 0h104v104H0z"></path>
+          <path fill="#fff" d="M0 0h104v104H0z"></path>
         </clipPath>
       </defs>
     </svg>

@@ -39,8 +39,7 @@ export default function HorizontalSlider(props: Data) {
           variants={ITEM_VARIANTS}
           className="relative hidden h-32 w-32 overflow-hidden xl:inline-block xl:pt-11"
         >
-          <motion.div
-            variants={ITEM_VARIANTS}
+          <div
             className="absolute inset-0  transition-transform duration-500 ease-out"
             style={{ transform: `translateY(-${curr * 128}px)` }}
           >
@@ -68,7 +67,7 @@ export default function HorizontalSlider(props: Data) {
                 "h-32 w-32"
               )}
             />
-          </motion.div>
+          </div>
         </motion.div>
         <motion.div
           variants={ITEM_VARIANTS}
