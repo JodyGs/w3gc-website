@@ -89,7 +89,7 @@ function CardSpeaker({ name, title, img, placeholder }: CardProps) {
       </motion.div>
       <motion.div
         variants={ITEM_VARIANTS}
-        className="absolute -bottom-[1px] z-10 w-full translate-y-0 space-y-2 bg-white p-4 text-custom-grey-middle transition-transform duration-300 ease-out group-hover:translate-y-0 md:p-8 lg:translate-y-full"
+        className="absolute -bottom-[1px] z-10 w-full translate-y-0 space-y-2 bg-white p-4 text-custom-grey-middle transition-all duration-300 ease-out group-hover:-bottom-[1px] md:p-8 lg:-bottom-full lg:translate-y-full"
       >
         <h3 className="whitespace-nowrap text-xs font-extrabold uppercase leading-4 md:text-base md:leading-6">
           {name}
