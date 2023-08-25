@@ -84,7 +84,7 @@ function CardSpeaker({ name, title, img, placeholder }: CardProps) {
         />
         <motion.div
           variants={ITEM_VARIANTS}
-          className="absolute inset-0 bg-[#2c2d38] opacity-0 mix-blend-color transition duration-300 ease-out group-hover:opacity-0 lg:opacity-100"
+          className="absolute inset-0 bg-[#2c2d38] opacity-0 mix-blend-color transition-all duration-300 ease-out group-hover:invisible lg:opacity-100"
         ></motion.div>
       </motion.div>
       <motion.div
