@@ -73,7 +73,7 @@ function CardSpeaker({ name, title, img, placeholder }: CardProps) {
   return (
     <motion.div
       variants={ITEM_VARIANTS}
-      className="group relative h-full w-full"
+      className="group relative h-full w-full overflow-hidden"
     >
       <motion.div variants={ITEM_VARIANTS} className="overflow-hidden">
         <Image
